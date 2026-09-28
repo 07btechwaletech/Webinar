@@ -3,7 +3,7 @@
 
 export const brand = {
   name: "Baithak",
-  whatsapp: "919876543210", // wa.me number, country code first, no "+"
+  whatsapp: "919296210282", // wa.me number, country code first, no "+"
   email: "hello@baithak.live",
   // Pre-filled text when you message a lead from the admin page. {name} becomes their first name.
   followUp: "Hi {name}! Thanks for joining the webinar 🙏 My full course opens this week. Shall I send you the details?",
