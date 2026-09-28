@@ -24,13 +24,18 @@ export function Hero() {
 
         <div className="wrap relative grid items-center gap-12 pb-12 pt-12 sm:pt-16 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8 lg:pb-14 lg:pt-16">
           <div>
-            <p className="rise eyebrow flex flex-wrap items-center gap-x-2.5 gap-y-1 text-white/70">
-              <span className="pulse size-2 rounded-full bg-signal" aria-hidden="true" />
-              {webinar.platform}
-              <span aria-hidden="true" className="hidden sm:inline">
-                ·
+            {/* each part is its own item, so on phones the date wraps cleanly under the first line */}
+            <p className="rise eyebrow flex items-start gap-2.5 text-white/70">
+              <span className="pulse mt-[5px] size-2 shrink-0 rounded-full bg-signal" aria-hidden="true" />
+              <span className="flex flex-wrap gap-x-2.5 gap-y-1.5">
+                <span>{webinar.platform}</span>
+                <span aria-hidden="true" className="hidden text-white/35 sm:inline">
+                  ·
+                </span>
+                <span>
+                  {formatDay(session.start)}, {formatTime(session.start)} IST
+                </span>
               </span>
-              {formatDay(session.start)}, {formatTime(session.start)} IST
             </p>
 
             <h1 id="hero-title" className="display mt-6 text-[clamp(2.7rem,5.6vw,4.6rem)]">
@@ -63,7 +68,7 @@ export function Hero() {
         </div>
 
         <div className="relative border-t border-white/10">
-          <dl className="wrap grid grid-cols-2 gap-y-6 py-6 md:grid-cols-4">
+          <dl className="wrap grid auto-rows-fr grid-cols-2 gap-x-4 gap-y-6 py-6 md:grid-cols-4">
             {facts.map((f) => (
               <div key={f.label}>
                 <dt className="eyebrow text-[0.65rem] text-white/45">{f.label}</dt>

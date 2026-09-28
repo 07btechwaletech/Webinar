@@ -230,7 +230,7 @@ export function LiveRoom() {
           </div>
         </div>
 
-        <ul className="mt-12 grid gap-8 sm:grid-cols-3">
+        <ul className="mt-12 grid gap-8 md:grid-cols-3">
           {roomFeatures.map((f) => (
             <li key={f.title} className="reveal border-t border-line pt-6">
               <h3 className="font-semibold">{f.title}</h3>

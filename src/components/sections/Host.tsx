@@ -35,11 +35,15 @@ export function Host() {
               <p key={p}>{p}</p>
             ))}
           </div>
-          <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-line pt-8">
+          {/* phones: one row per stat with values in a fixed column; wider screens: three equal columns */}
+          <dl className="mt-10 grid gap-4 border-t border-line pt-8 sm:grid-cols-3">
             {host.facts.map((f) => (
-              <div key={f.label} className="flex flex-col-reverse">
-                <dt className="mt-2 text-sm leading-snug text-muted">{f.label}</dt>
-                <dd className="display text-[clamp(1.6rem,3.4vw,2.3rem)]">
+              <div
+                key={f.label}
+                className="flex flex-row-reverse items-baseline justify-end gap-4 sm:flex-col-reverse sm:items-start sm:justify-start sm:gap-2"
+              >
+                <dt className="text-sm leading-snug text-muted">{f.label}</dt>
+                <dd className="display w-32 shrink-0 text-[clamp(1.6rem,3.4vw,2.3rem)] sm:w-auto">
                   <CountUp value={f.value} decimals={"decimals" in f ? f.decimals : 0} suffix={"suffix" in f ? f.suffix : ""} />
                 </dd>
               </div>

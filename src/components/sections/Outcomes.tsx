@@ -15,7 +15,7 @@ export function Outcomes() {
           </p>
         </div>
 
-        <ul className="grid gap-4 sm:grid-cols-2">
+        <ul className="grid auto-rows-fr gap-4 sm:grid-cols-2">
           {outcomes.map((o) => {
             const Icon = outcomeIcons[o.icon];
             return (

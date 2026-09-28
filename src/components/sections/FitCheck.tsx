@@ -10,7 +10,7 @@ export function FitCheck() {
           It’s a good fit for most people. Not for everyone.
         </h2>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2">
+        <div className="mt-12 grid auto-rows-fr gap-4 md:grid-cols-2">
           <div className="card reveal p-7 sm:p-9">
             <h3 className="text-lg font-semibold">Come if…</h3>
             <ul className="mt-6 space-y-5">

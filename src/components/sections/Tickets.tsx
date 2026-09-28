@@ -16,7 +16,7 @@ export function Tickets() {
           <p className="mt-5 text-lg text-muted">One session, two ways in. Prices include GST.</p>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-4xl gap-4 md:grid-cols-2">
+        <div className="mx-auto mt-14 grid max-w-4xl auto-rows-fr gap-4 md:grid-cols-2">
           {tickets.map((t) => (
             <article
               key={t.id}
