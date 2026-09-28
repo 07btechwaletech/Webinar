@@ -1,23 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Doto, Schibsted_Grotesk } from "next/font/google";
+import { Anek_Latin, Kalam, Mukta } from "next/font/google";
 import { brand, webinar } from "@/content/webinar";
 import "./globals.css";
 
-const archivo = Archivo({ subsets: ["latin"], axes: ["wdth"], variable: "--font-archivo", display: "swap" });
-const schibsted = Schibsted_Grotesk({ subsets: ["latin"], variable: "--font-schibsted", display: "swap" });
-const doto = Doto({ subsets: ["latin"], variable: "--font-doto", display: "swap" });
+// Type from Indian foundries: Anek (Ek Type) for headlines, Mukta (Ek Type) for text,
+// Kalam (Indian Type Foundry) for the handwritten notes.
+const anek = Anek_Latin({ subsets: ["latin"], axes: ["wdth"], variable: "--font-anek", display: "swap" });
+const mukta = Mukta({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-mukta", display: "swap" });
+const kalam = Kalam({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-kalam", display: "swap" });
 
 export const metadata: Metadata = {
   title: `${webinar.title} · ${brand.name}`,
-  description:
-    "A two-hour live session where we build your course launch together: the registration page, the WhatsApp reminders and the pitch.",
+  description: webinar.subtitle,
 };
 
-export const viewport: Viewport = { themeColor: "#eceef1" };
+export const viewport: Viewport = { themeColor: "#ffc23a" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN" className={`${archivo.variable} ${schibsted.variable} ${doto.variable}`}>
+    <html lang="en-IN" className={`${anek.variable} ${mukta.variable} ${kalam.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

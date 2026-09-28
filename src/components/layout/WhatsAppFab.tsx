@@ -8,10 +8,10 @@ export function WhatsAppFab() {
       href={`https://wa.me/${brand.whatsapp}?text=${text}`}
       target="_blank"
       rel="noreferrer"
-      className="group fixed bottom-6 right-6 z-30 hidden items-center gap-3 rounded-full bg-ink py-3 pl-4 pr-5 text-sm font-medium text-white shadow-xl transition-transform duration-300 hover:-translate-y-0.5 md:flex"
+      aria-label="Ask a question on WhatsApp"
+      className="wiggle fixed bottom-24 right-4 z-30 grid size-14 place-items-center rounded-full border-2 border-ink bg-wa text-white shadow-[3px_3px_0_var(--color-ink)] md:bottom-6 md:right-6"
     >
-      <WhatsApp />
-      Questions? Chat with us
+      <WhatsApp width={28} height={28} />
     </a>
   );
 }
